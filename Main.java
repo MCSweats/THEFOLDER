@@ -10,13 +10,22 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class Main {
+    //Windows Username
+    public static String username = System.getProperty("user.name");
+
+
+    //Config
+    public static long delay = 1500; //Milliseconds
+    public static File folder = new File("C:/Users/"+username+"/AppData/Roaming/.minecraft/assets/THEFOLDER"); //PUT THEFOLDER PATH HERE
+    public static boolean fullScreen = false;
+
+
+
+
 
     public static boolean switching = true;
     public static Frame frame = new JFrame();
-    public static File folder = new File("C:/Users/USER_NAME/AppData/Roaming/.minecraft/assets/THEFOLDER"); //PUT THEFOLDER PATH HERE
     public static ArrayList<File> images = new ArrayList<>();
-    public static long delay = 1500;
-
 
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -33,7 +42,7 @@ public class Main {
 
         frame.setSize((int) size.getWidth(), (int) size.getHeight());
         frame.setTitle("THE FOLDER!");
-        frame.setUndecorated(true);
+        frame.setUndecorated(fullScreen);
         new MouseChecker().activate();
         frame.setVisible(true);
 
